@@ -16,5 +16,10 @@ pipeline {
         sh 'docker-compose stop'
       }
     }
+    stage('Deploy to production') {
+      steps {
+        echo 'Deploy to production server'
+      }
+    }
   }
 }
