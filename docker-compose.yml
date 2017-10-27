@@ -1,0 +1,44 @@
+version: '2'
+
+services:
+
+  nginx:
+    build:
+      context: ./nginx/
+      dockerfile: ./Dockerfile
+    ports:
+      - 8000:80
+    links:
+      - frontend:frontend
+
+  frontend:
+    build:
+      context: ./frontend/
+      dockerfile: ./Dockerfile
+    # ports:
+    #   - 8000:80
+
+    depends_on:
+      - backend
+      - socket-server
+    volumes:
+      - ./frontend:/app
+  
+  backend:
+    build:
+      context: ./backend/
+      dockerfile: ./Dockerfile
+    ports:
+      - 5000:5000
+    volumes:
+      - ./backend:/app
+  socket-server:
+    build:
+      context: ./socket-server/
+      dockerfile: ./Dockerfile
+
+  mongodb:
+    image: mongo
+  
+  redis:
+    image: redis
