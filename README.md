@@ -1,5 +1,5 @@
 # An example of a microservice architecture
-
+Microservice example project.
 
 ## Build and Run
 ```shell
