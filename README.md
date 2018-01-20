@@ -1,4 +1,4 @@
-# An example of a microservice architecture
+# An example of a Microservice Architecture
 Microservice example project.
 
 ## Build and Run
