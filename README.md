@@ -6,3 +6,5 @@ Microservice example project.
 $ docker-compose build
 $ docker-compose up -d
 ```
+
+## License
